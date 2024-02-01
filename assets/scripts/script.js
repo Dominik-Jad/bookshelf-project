@@ -20,10 +20,6 @@ $(document).ready(function () {
     // run fetchSearchedBook function
     fetchSearchedBook(searchInput);
     
-    // display search results
-
-  
-
    });      
 
    // function to display search results
@@ -43,7 +39,7 @@ $(document).ready(function () {
             var bookImage = book.volumeInfo.imageLinks.thumbnail;
             var bookLink = book.volumeInfo.previewLink;
 
-            var bookDiv = $("<div>").addClass("col-md-3");
+            var bookDiv = $("<div>").addClass("col-md-4");
             var bookCard = $("<div>").addClass("card");
             var bookCardBody = $("<div>").addClass("card-body");
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
@@ -106,6 +102,30 @@ $(document).ready(function () {
         
     }
 
+    function displayBestLessers(bestSellers) {
+        //clear
+        $("#best-sellers").empty();
+
+        for(var i = 0; i < 5; i++) {
+            var bestSeller = bestSellers[i];
+
+            var bookTitle = bestSeller.title;
+            var bookAuthor = bestSeller.author;
+            var bookLink = bestSeller.amazon_product_url;
+
+            var bookDiv = $("<div>").addClass("col-12");
+            var bookCard = $("<div>").addClass("card");
+            var bookCardBody = $("<div>").addClass("card-body");
+            var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
+            var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
+            var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
+
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookLinkEl);
+            bookCard.append(bookCardBody);
+            bookDiv.append(bookCard);
+            $("#best-sellers").append(bookDiv);
+        }
+    }
     function fetchBestSellers() {
         // get best sellers list
         var key = "uApovvwLcJVuNdbyxAM28Mm64IfUeEmG"       
@@ -115,15 +135,17 @@ $(document).ready(function () {
         .then(response => response.json())
         .then(data => {
              
-            var bestSeller = data.results;
+            var bestSellers = data.results;
 
-            console.log(bestSeller);
+            console.log(bestSellers);
+
+            displayBestLessers(bestSellers);
         })
     }
 
     // fetchSearchedBook();
 
-    // fetchBestSellers();
+    fetchBestSellers();
 
     // fetchRandomBook();
 });

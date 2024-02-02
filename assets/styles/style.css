@@ -1,0 +1,13 @@
+.nav-link
+{
+    color: #f7e2a8;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #057244;
+    border-radius: 5px;
+    background-color: #057244;
+    transition: all 0.3s;
+}

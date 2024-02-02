@@ -171,24 +171,49 @@ $(document).ready(function () {
             var randomIndex = Math.floor(Math.random() * bestSellers.length);
 
             var bestSeller = bestSellers[randomIndex];
+            var isbn = bestSeller.isbns[0].isbn10;
 
+            if (isbn === undefined) {
+                isbn = bestSeller.isbns[0].isbn13;
+            }
             var bookTitle = bestSeller.title;
             var bookAuthor = bestSeller.author;
             var bookLink = bestSeller.amazon_product_url;
 
-            var bookDiv = $("<div>").addClass("col-12");
+            var bookDiv = $("<div>").addClass("col-12 text-center");
             var bookCard = $("<div>").addClass("card");
             var bookCardBody = $("<div>").addClass("card-body");
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
-            var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
+            var bookImageEl = $("<img>").addClass("card-img-top").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/book%20placeholder.png").attr("id", "isbn-" + isbn);
+            bookImageEl.height(200);
+            bookImageEl.width(200);
+            var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book").attr("id", "btn-isbn-" + isbn);
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookLinkEl);
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl);
             bookCard.append(bookCardBody);
             bookDiv.append(bookCard);
             $("#best-sellers").append(bookDiv);
+
+            updateCover(isbn);
         }
-    }
+    }   
+    function updateCover(isbn) {
+        fetch('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=AIzaSyAyINR2SYnt4K-0x6zh6S3x6NVUY15pY7Q", {
+          method: 'get'
+        })
+        .then(response => { return response.json(); })
+        .then(data => {
+            console.log(data);
+          var img = data.items[0].volumeInfo.imageLinks.thumbnail;
+         img = img.replace("http://", "https://");
+         $('#isbn-' + isbn).attr('src', img);
+         $('#btn-isbn-' + isbn).attr('href', data.items[0].volumeInfo.previewLink);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
     function fetchBestSellers() {
         // get best sellers list
         var key = "uApovvwLcJVuNdbyxAM28Mm64IfUeEmG"

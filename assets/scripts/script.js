@@ -29,9 +29,10 @@ $(document).ready(function () {
         $("#search-results").empty();
 
         console.log(bookResult);
+        
 
         for (let i = 0; i < bookResult.length; i++) {
-
+            var saveBtn = $("<button>").addClass("btn btn-primary").text("Save Book").attr("id", "save-btn");
             var book = bookResult[i];
          
             var bookTitle = book.volumeInfo.title;
@@ -49,12 +50,34 @@ $(document).ready(function () {
             bookImageEl.width(200);
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl);
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl, saveBtn);
             bookCard.append(bookCardBody);
             bookDiv.append(bookCard);
             $("#search-results").append(bookDiv);
         }
     }
+
+    $(document).on("click", "#save-btn", function(event){
+        event.preventDefault();
+        console.log("clicked");
+        var bookTitle = $(this).siblings(".card-title").text();
+        var bookAuthor = $(this).siblings(".card-text").text();
+        var bookImage = $(this).siblings(".card-img-top").attr("src");
+        var bookLink = $(this).siblings(".btn-primary").attr("href");
+
+        var book = {
+            title: bookTitle,  
+            author: bookAuthor,
+            image: bookImage,
+            link: bookLink
+        }
+
+        //save book to local storage array
+        var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
+        savedBooks.push(book);
+        localStorage.setItem("myBooks", JSON.stringify(savedBooks));
+
+    }); 
 
     async function fetchSearchedBook(searchInput) {
         // get book based on search query

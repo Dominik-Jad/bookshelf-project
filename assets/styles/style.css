@@ -1,5 +1,5 @@
-.nav-link
-{
+
+.nav-link {
     color: #f7e2a8;
     font-size: 20px;
     font-weight: bold;
@@ -10,4 +10,63 @@
     border-radius: 5px;
     background-color: #057244;
     transition: all 0.3s;
+
 }
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: "Arial", sans-serif;
+}
+
+/* Navigation styles */
+.nav {
+  background-color:blue; /* Bootstrap's primary color */
+}
+
+/* Hero Section styles */
+.hero-section {
+position: relative;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 300px;
+overflow: hidden;
+  color: #fff; /* Text color for hero section */
+}
+
+/* Book Search and Display styles */
+#book-search-container {
+margin-top: 20px;
+}
+
+#book-search-container h2 {
+color: #007bff;
+margin-bottom: 20px;
+}
+
+#search-input {
+width: 80%;
+}
+
+#search-btn {
+margin-top: 10px;
+}
+
+#search-results {
+margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+#search-input {
+width: 100%;
+}
+
+

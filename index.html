@@ -29,16 +29,27 @@
       <a class="nav-link " href="#"> Recommendations </a>
     </li>
   </ul>
- <!-- Hero Section -->
- <div class="hero-section" style="position: relative; background-image: url('assets/images/BookShelf.jpg');
- margin: 0; padding: 300px 0; background-position: center;
- background-repeat: no-repeat; background-size: cover; height: 500px; overflow: hidden;
-<!-- Book search and Display -->
+
+<!-- Hero Section -->
+  <div class="hero-section" style="position: relative; background-image: url('assets/img/BookShelf.jpg'); 
+  margin: 0; padding: 30px 0; background-position: center; 
+  background-repeat: no-repeat; background-size: cover; height: 300px; overflow: hidden;">
+    <div class="container">
+    </div>
+  </div>
+
+  <!-- Book search and Display -->
   <div class="container-fluid" id="book-search-container">
     <div class="row">
-      <div class="col-12">
-          <h2>Find Your Book</h2>
+      <aside class="col-3">
+        <h2>Best Sellers</h2>
+        <div class = "row" id="best-sellers">
+        
         </div>
+      </aside>
+      <div class="col-9">
+        <h2>Find Your Book</h2>
+        
         <form action="" method="post">
           <div class="form-group">
             <label for="search">Search for a book</label>
@@ -47,11 +58,11 @@
           </div>
           <button id="search-btn" type="submit" class="btn btn-primary">Search</button>
         </form>
+        <!-- display search results  -->
+        <div class="row text-center" id="search-results">
+        </div>
       </div>
     </div>
-    <!-- display search results  -->
-      <div class="row text-center" id="search-results">
-      </div>
   </div>
   <!-- Scripts -->
   <!-- jQuery -->

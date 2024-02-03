@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     $(document).on("click", "#save-btn", function (event) {
         event.preventDefault();
-        console.log("clicked");
+        
         var bookTitle = $(this).siblings(".card-title").text();
         var bookAuthor = $(this).siblings(".card-text").text();
         var bookImage = $(this).siblings(".card-img-top").attr("src");
@@ -72,6 +72,14 @@ $(document).ready(function () {
             link: bookLink
         }
 
+        // Check if book is already saved
+        var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
+        for (var i = 0; i < savedBooks.length; i++) {
+            if (savedBooks[i].title === book.title) {
+                console.log("Book already saved");
+                return;
+            }
+        }
         //save book to local storage array
         var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
         savedBooks.push(book);
@@ -106,8 +114,6 @@ $(document).ready(function () {
         // display search results
         //clear 
         $("#search-results").empty();
-
-    
 
         for (let i = 0; i < randomBooks.length; i++) {
             var saveBtn = $("<button>").addClass("btn btn-primary").text("Save Book").attr("id", "save-btn");
@@ -162,7 +168,7 @@ $(document).ready(function () {
         }
     }
 
-    function displayBestLessers(bestSellers) {
+    function displayBestSellers(bestSellers) {
         //clear
         $("#best-sellers").empty();
         // display random 5 from best sellers list
@@ -171,11 +177,13 @@ $(document).ready(function () {
             var randomIndex = Math.floor(Math.random() * bestSellers.length);
 
             var bestSeller = bestSellers[randomIndex];
-            var isbn = bestSeller.isbns[0].isbn10;
 
-            if (isbn === undefined) {
-                isbn = bestSeller.isbns[0].isbn13;
+            if (bestSeller.isbns[0] === undefined) {
+                var isbn = 0;
+            }else {
+                var isbn = bestSeller.isbns[0].isbn10;
             }
+           
             var bookTitle = bestSeller.title;
             var bookAuthor = bestSeller.author;
             var bookLink = bestSeller.amazon_product_url;
@@ -195,25 +203,28 @@ $(document).ready(function () {
             bookDiv.append(bookCard);
             $("#best-sellers").append(bookDiv);
 
-            updateCover(isbn);
+            if (isbn){
+              updateCover(isbn);
+            }
+           
         }
-    }   
+    }
     function updateCover(isbn) {
         fetch('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=AIzaSyAyINR2SYnt4K-0x6zh6S3x6NVUY15pY7Q", {
-          method: 'get'
+            method: 'get'
         })
-        .then(response => { return response.json(); })
-        .then(data => {
-            console.log(data);
-          var img = data.items[0].volumeInfo.imageLinks.thumbnail;
-         img = img.replace("http://", "https://");
-         $('#isbn-' + isbn).attr('src', img);
-         $('#btn-isbn-' + isbn).attr('href', data.items[0].volumeInfo.previewLink);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      }
+            .then(response => { return response.json(); })
+            .then(data => {
+                console.log(data);
+                var img = data.items[0].volumeInfo.imageLinks.thumbnail;
+                img = img.replace("http://", "https://");
+                $('#isbn-' + isbn).attr('src', img);
+                $('#btn-isbn-' + isbn).attr('href', data.items[0].volumeInfo.previewLink);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
     function fetchBestSellers() {
         // get best sellers list
         var key = "uApovvwLcJVuNdbyxAM28Mm64IfUeEmG"
@@ -227,7 +238,7 @@ $(document).ready(function () {
 
                 console.log(bestSellers);
 
-                displayBestLessers(bestSellers);
+                displayBestSellers(bestSellers);
             })
     }
 

@@ -22,10 +22,10 @@
             <a class="nav-link active" aria-current="page" href="#">My Bookshelf</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Read & Review</a>
+            <a class="nav-link" href="readandreview.html">Read & Review</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Recommendations</a>
+            <a class="nav-link" href="recommendation.html">Recommendations</a>
         </li>
     </ul>
     <!-- Hero Section -->
@@ -41,25 +41,24 @@
     <div class="container mt-3">
         <!-- Bookshelf Sections -->
         <div class="row">
+             <!-- "To Read" Section -->
+             <div class="col-md-4">
+                <div class="bookshelf-section">
+                    <h3>To Read</h3>
+                    <!-- Add 12 book cards for "To Read" section -->
+                    <div class="row" id="to-read">
+                       
+                    </div>
+                </div>
+            </div>
+
             <!-- "Have Read" Section -->
             <div class="col-md-4">
                 <div class="bookshelf-section">
                     <h3>Have Read</h3>
                     <!-- Add 12 book cards for "Have Read" section -->
-                    <div class="row">
-                        <!-- Example book card (repeat this block 12 times) -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <!-- Card content -->
-                                <img src="book_cover_1.jpg" class="card-img-top" alt="Book 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Book Title 1</h5>
-                                    <p class="card-text">Author: Author 1</p>
-                                    <!-- Other book details go here -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Repeat the above book card block for the remaining books -->
+                    <div class="row" id="have-read">
+                        
                     </div>
                 </div>
             </div>
@@ -69,46 +68,13 @@
                 <div class="bookshelf-section">
                     <h3>Favorites</h3>
                     <!-- Add 12 book cards for "Favorites" section -->
-                    <div class="row">
-                        <!-- Example book card (repeat this block 12 times) -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <!-- Card content -->
-                                <img src="book_cover_2.jpg" class="card-img-top" alt="Book 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Book Title 2</h5>
-                                    <p class="card-text">Author: Author 2</p>
-                                    <!-- Other book details go here -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Repeat the above book card block for the remaining books -->
+                    <div class="row" id="favourites">
+                        
                     </div>
                 </div>
             </div>
 
-            <!-- "To Read" Section -->
-            <div class="col-md-4">
-                <div class="bookshelf-section">
-                    <h3>To Read</h3>
-                    <!-- Add 12 book cards for "To Read" section -->
-                    <div class="row">
-                        <!-- Example book card (repeat this block 12 times) -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <!-- Card content -->
-                                <img src="book_cover_3.jpg" class="card-img-top" alt="Book 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Book Title 3</h5>
-                                    <p class="card-text">Author: Author 3</p>
-                                    <!-- Other book details go here -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Repeat the above book card block for the remaining books -->
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
 
@@ -118,7 +84,7 @@
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Custom Scripts -->
-    <script src=""></script>
+    <script src="./assets/scripts/bookshelf.js"></script>
 </body>
 
 </html>

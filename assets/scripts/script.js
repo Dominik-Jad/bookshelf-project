@@ -69,7 +69,8 @@ $(document).ready(function () {
             title: bookTitle,
             author: bookAuthor,
             image: bookImage,
-            link: bookLink
+            link: bookLink,
+            fave : false,
         }
 
         // Check if book is already saved

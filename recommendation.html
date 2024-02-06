@@ -34,7 +34,6 @@
     <div class="row">
       <div id="sidebar">
         <h2>Genres</h2>
-
         <ul class="list-unstyled genres">
           <li><a href="#" data-genre="fantasy">Fantasy</a></li>
           <li><a href="#" data-genre="mystery">Mystery</a></li>
@@ -47,21 +46,58 @@
           <li><a href="#" data-genre="selfhelp">Self-Help</a></li>
           <li><a href="#" data-genre="cookbooks">Cookbooks</a></li>
         </ul>
-
       </div>
+
       <div class="col-8">
         <h2>Recommended books </h2>
         <div class="row" id="recommended-books">
           <!-- Example book card (repeat this block 12 times) -->
         </div>
+      </div>
+    </div>
+  </div>
 
-          <!-- Scripts -->
-          <!-- jQuery -->
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-          <!-- Bootstrap JS -->
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-          <!-- Custom Scripts -->
-          <script src="./assets/scripts/reccomendation.js"></script>
+  <div id="book-added-modal" class="modal fade" tabindex="-1">
+    <div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book Added</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your book has been added</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="book-already-added-modal" class="modal fade" tabindex="-1">
+  <div>
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Book Added</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Your book has been already added</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+  <!-- Scripts -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Custom Scripts -->
+  <script src="./assets/scripts/reccomendation.js"></script>
 </body>
 
 </html>

@@ -40,8 +40,7 @@ function displayFaveBooks() {
             bookImage.height(100);
             bookImage.width(100);
             var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View Book");
-            var faveBtn = $("<button>").addClass("btn btn-warning fave-btn").text("Favorite").attr("data-id", i);
-            bookBody.append(bookTitle, bookAuthor, bookImage, bookLink, faveBtn);
+            bookBody.append(bookTitle, bookAuthor, bookImage, bookLink );
             bookCard.append(bookBody);
             container.append(bookCard);
             $("#favourites").append(container);

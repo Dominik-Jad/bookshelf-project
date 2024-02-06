@@ -1,0 +1,116 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+margin: 0;
+padding: 0;
+}
+h1 {
+    color: #493024;
+}
+h2, h3 {
+    color: #684433;
+}
+
+
+
+
+body {
+font-family: "Arial", sans-serif;
+}
+
+/* Navigation styles */
+.nav {
+  background-color:rgb(111, 69, 47); /* Bootstrap's primary color */
+}
+
+.nav-link {
+  color: #fff; /* White text color */
+}
+.nav-link.active {
+    background-color: #975b3e !important; /* Set background color for active link */
+    border-color: #975b3e !important; /* Set border color for active link */
+}
+
+.nav-pills .nav-link:hover {
+    color: #3d271c !important; /* Set text color to brown when hovering */
+}
+
+/* Hero Section styles */
+.hero-section {
+position: relative;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 300px;
+overflow: hidden;
+  color: #fff; /* Text color for hero section */
+}
+.btn-primary {
+    background-color: rgb(149, 112, 87); /* Set background color */
+    border-color: rgb(149, 112, 87); /* Set border color */
+}
+
+.btn-primary:hover {
+    background-color: #975b3e; /* Darker shade for hover effect */
+    border-color: #975b3e; /* Darker shade for hover effect */
+}
+
+/* Book Search and Display styles */
+#book-search-container {
+margin-top: 20px;
+}
+
+#book-search-container h2 {
+color: rgb(111, 69, 47);
+margin-bottom: 20px;
+}
+
+#search-input {
+width: 80%;
+}
+
+#search-btn {
+margin-top: 10px;
+}
+
+#search-results {
+margin-top: 20px;
+}
+
+#sidebar {
+        
+  top: 0;
+  left: 0;
+  right: 200px;
+  height: 100%;
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+#sidebar ul {
+  padding: 0;
+}
+
+#sidebar ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #343a40;
+}
+
+#sidebar ul li a:hover {
+  color: #007bff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+#search-input {
+width: 100%;
+}
+

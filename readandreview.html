@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadAndReview</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Browse Bookshelf</a>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="mybookshelf.html">My Bookshelf</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="readandreview.html"> Read & Review </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="recommendation.html"> Recommendations </a>
+        </li>
+    </ul>
+
+    <!-- Hero Section -->
+    <div class="hero-section"
+        style="position: relative; background-image: url('assets/images/read&review.jpg'); margin: 0; padding: 30px 0; background-position: center; background-repeat: no-repeat; background-size: cover; height: 300px; overflow: hidden;">
+        <div class="container">
+        </div>
+    </div>
+    <!-- Books, Text area to display revie and button to add review in modal -->
+    <div class="row text-center">
+        <div class="col-3">
+            <h2>Books</h2>
+        </div>
+        <div class="col-6">
+            <h2>Reviews</h2>
+        </div>
+        <div class="col-3">
+            <h2>Add Review</h2>
+        </div>
+    </div>
+
+    <div id="book-container" class="container-fluid">
+
+    </div>
+
+
+    <!-- Modal -->
+    <div id="review-modal" class="modal fade" tabindex="-1">
+        <div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Review</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="review-form">
+                            <div class="form-group">
+                                <label for="review">Review</label>
+                                <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+                            </div>
+                            <button type="submit" id="save-review-btn" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Empty review error modal -->
+    <div id="empty-review-modal" class="modal fade" tabindex="-1">
+        <div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Error</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please enter a review before submitting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- review added modal -->
+    <div id="review-added-modal" class="modal fade" tabindex="-1">
+        <div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Review Added</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your review has been added</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./assets/scripts/review.js"></script>
+</body>
+
+</html>

@@ -16,39 +16,89 @@
   <!-- Navigation -->
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Browse Bookshelf</a>
+      <a class="nav-link active" href="index.html">Browse Bookshelf</a>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">My Bookshelf</a>
+      <a class="nav-link" href="mybookshelf.html">My Bookshelf</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"> Read & Review </a>
+      <a class="nav-link" href="readandreview.html"> Read & Review </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="#"> Recommendations </a>
+      <a class="nav-link" href="recommendation.html"> Recommendations </a>
     </li>
   </ul>
+
+<!-- Hero Section -->
+  <div class="hero-section" style="position: relative; background-image: url('assets/images/BookShelf.png'); 
+  margin: 0; padding: 30px 0; background-position: center; 
+  background-repeat: no-repeat; background-size: cover; height: 300px; overflow: hidden;">
+    <div class="container">
+    </div>
+  </div>
 
   <!-- Book search and Display -->
   <div class="container-fluid" id="book-search-container">
     <div class="row">
-      <div class="col-12">
+      <aside class="col-3">
+        <h2>Best Sellers</h2>
+        <div class = "row" id="best-sellers">
+        
+        </div>
+      </aside>
+      <div class="col-9">
         <h2>Find Your Book</h2>
+        
         <form action="" method="post">
           <div class="form-group">
-            <label for="search">Search for a book</label>
+            <label for="search-input">Search for a book</label>
             <input type="text" class="form-control" id="search-input" name="search"
               placeholder="Enter a book title or author">
           </div>
           <button id="search-btn" type="submit" class="btn btn-primary">Search</button>
         </form>
+        <!-- display search results  -->
+        <div class="row text-center" id="search-results">
+        </div>
       </div>
     </div>
-    <!-- display search results  -->
-      <div class="row text-center" id="search-results">
+  </div>
+
+  <div id="book-added-modal" class="modal fade" tabindex="-1">
+    <div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book Added</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your book has been added</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="book-already-added-modal" class="modal fade" tabindex="-1">
+  <div>
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Book Added</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Your book has been already added</p>
+              </div>
+          </div>
       </div>
   </div>
+</div>
   <!-- Scripts -->
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

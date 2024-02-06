@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshelf</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Browse Bookshelf</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">My Bookshelf</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="readandreview.html">Read & Review</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="recommendation.html">Recommendations</a>
+        </li>
+    </ul>
+    <!-- Hero Section -->
+    <div class="hero-section"
+
+        style="position: relative; background-image: url('assets/images/mybookshelf.jpg'); margin: 0; padding: 30px 0; background-position: center; background-repeat: no-repeat; background-size: cover; height: 300px; overflow: hidden;">
+        <div class="container">
+            <div>
+                <h3 style="position: absolute; display: inline-block; padding: 10px; width: auto; font-size: 30px; bottom: 20px; left: 30px;background-color: bisque ; color: black; font-size: xx-large; font-weight: bold; z-index: 10;">My Bookshelf</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Bookshelf Container -->
+    <div class="container col-8 mt-3">
+        <!-- Bookshelf Sections -->
+        <div class="row">
+            <!-- "To Read" Section -->
+            <div class="col-md-4">
+                <div class="bookshelf-section">
+                    <h3>To Read</h3>
+                    <!-- Add 12 book cards for "To Read" section -->
+                    <div class="row" id="to-read">
+                    </div>
+                </div>
+            </div>
+            <!-- "Have Read" Section -->
+            <div class="col-md-4">
+                <div class="bookshelf-section">
+                    <h3>Have Read</h3>
+                    <!-- Add 12 book cards for "Have Read" section -->
+                    <div class="row" id="have-read">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- "Favorites" Section -->
+            <div class="col-md-4">
+                <div class="bookshelf-section">
+                    <h3>Favorites</h3>
+                    <!-- Add 12 book cards for "Favorites" section -->
+                    <div class="row" id="favourites">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./assets/scripts/bookshelf.js"></script>
+
+</body>
+
+</html>

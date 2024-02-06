@@ -14,10 +14,21 @@ h2, h3 {
 }
 
 
+.card {
+    background-color: rgb(252, 242, 237) ;
+    border: 1px solid #dee2e6;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+}
 
+button {
+   margin: 10px;
+}
 
 body {
 font-family: "Arial", sans-serif;
+background-color: rgb(196, 178, 155);
 }
 
 /* Navigation styles */
@@ -113,4 +124,4 @@ margin-top: 20px;
 #search-input {
 width: 100%;
 }
-
+}

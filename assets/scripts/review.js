@@ -85,7 +85,7 @@ $(document).ready(function () {
             var bookTitleDiv = $("<div>").addClass("col-md-3").text(book.title);
             var bookReviewDiv = $("<div>").addClass("col-md-6").text(book.review);
             var buttondDiv = $("<div>").addClass("col-md-3");
-            var reviewBtn = $("<button>").addClass("btn btn-primary btn-success").text("Add").attr("id", "add-review-btn");
+            var reviewBtn = $("<button>").addClass("btn btn-primary btn-success").text("Add Review").attr("id", "add-review-btn");
             var appendBtn = $("<button>").addClass("btn btn-primary btn-warning").text("Append").attr("id", "append-btn");
             var deleteBtn = $("<button>").addClass("btn btn-primary btn-danger").text("Delete").attr("id", "delete-btn");
 

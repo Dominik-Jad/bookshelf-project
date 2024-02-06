@@ -77,7 +77,7 @@ $(document).ready(function () {
         var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
         for (var i = 0; i < savedBooks.length; i++) {
             if (savedBooks[i].title === book.title) {
-                console.log("Book already saved");
+                $("#book-already-added-modal").modal("show");
                 return;
             }
         }
@@ -85,7 +85,7 @@ $(document).ready(function () {
         var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
         savedBooks.push(book);
         localStorage.setItem("myBooks", JSON.stringify(savedBooks));
-
+        $("#book-added-modal").modal("show");
     });
 
     async function fetchSearchedBook(searchInput) {

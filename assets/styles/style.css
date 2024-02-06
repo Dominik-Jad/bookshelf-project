@@ -1,3 +1,17 @@
+
+.nav-link {
+    color: #f7e2a8;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #057244;
+    border-radius: 5px;
+    background-color: #057244;
+    transition: all 0.3s;
+
+}
 /* Reset some default styles */
 body,
 h1,
@@ -14,10 +28,6 @@ font-family: "Arial", sans-serif;
 /* Navigation styles */
 .nav {
   background-color:blue; /* Bootstrap's primary color */
-}
-
-.nav-link {
-  color: #fff; /* White text color */
 }
 
 /* Hero Section styles */
@@ -58,9 +68,12 @@ margin-top: 20px;
 #search-input {
 width: 100%;
 }
-}
 
+<<<<<<< HEAD
 #sidebar {
+=======
+    #sidebar {
+>>>>>>> 7cde4c09ee593215eff9552963f3493996fd9bc6
         
         top: 0;
         left: 0;
@@ -88,6 +101,3 @@ width: 100%;
     #sidebar ul li a:hover {
         color: #007bff;
     }
-</style>
-
-

@@ -34,21 +34,71 @@
   <div class="container-fluid" id="book-search-container">
     <div class="row">
       <div class="col-12">
-        <h2>Find Your Book</h2>
-        <form action="" method="post">
-          <div class="form-group">
-            <label for="search">Search for a book</label>
-            <input type="text" class="form-control" id="search-input" name="search"
-              placeholder="Enter a book title or author">
+        <h2>Recommended books </h2>
+        <div class="row" id="recommended-books">
+          <!-- Example book card (repeat this block 12 times) -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Card content -->
+              <img src="book_cover_1.jpg" class="card-img-top" alt="Book 1">
+              <div class="card-body">
+                <h5 class="card-title">Book Title 1</h5>
+                <p class="card-text">Author: Author 1</p>
+                <!-- Other book details go here -->
+              </div>
+            </div>
           </div>
-          <button id="search-btn" type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </div>
-    </div>
-    <!-- display search results  -->
-      <div class="row text-center" id="search-results">
-      </div>
-  </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Card content -->
+              <img src="book_cover_2.jpg" class="card-img-top" alt="Book 2">
+              <div class="card-body">
+                <h5 class="card-title">Book Title 2</h5>
+                <p class="card-text">Author: Author 2</p>
+                <!-- Other book details go here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Card content -->
+              <img src="book_cover_3.jpg" class="card-img-top" alt="Book 3">
+              <div class="card-body">
+                <h5 class="card-title">Book Title 3</h5>
+                <p class="card-text">Author: Author 3</p>
+                <!-- Other book details go here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Card content -->
+              <img src="book_cover_4.jpg" class="card-img-top" alt="Book 4">
+              <div class="card-body">
+                <h5 class="card-title">Book Title 4</h5>
+                <p class="card-text">Author: Author 4</p>
+                <!-- Other book details go here -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Card content -->
+              <img src="book_cover_5.jpg" class
+              
+              <div id="sidebar">
+                <h2>Genres</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#">Fantasy</a></li>
+                    <li><a href="#">Science Fiction</a></li>
+                    <li><a href="#">Mystery</a></li>
+                    <li><a href="#">Thriller</a></li>
+                    <li><a href="#">Romance</a></li>
+                    <li><a href="#">Young Adult</a></li>
+                    <li><a href="#">Non-fiction</a></li>
+                </ul>
+            </div>
+            
   <!-- Scripts -->
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

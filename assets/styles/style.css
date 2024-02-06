@@ -60,8 +60,7 @@ width: 100%;
 }
 }
 
-<style>
-    #sidebar {
+#sidebar {
         
         top: 0;
         left: 0;
@@ -71,8 +70,8 @@ width: 100%;
         background-color: #f8f9fa;
         padding: 20px;
     }
-
-    #sidebar ul {
+    
+#sidebar ul {
         padding: 0;
     }
 

@@ -7,6 +7,7 @@ $(document).ready(function () {
     $(".genres").on("click", 'a', function (event) {
         event.preventDefault();
         var genre = $(this).text();
+        $(this).addClass("active").siblings().removeClass("active");
         getRecommendation(genre);
     });
 

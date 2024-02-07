@@ -48,8 +48,8 @@ $(document).ready(function () {
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl, saveBtn);
-            bookCard.append(bookCardBody);
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
+            bookCard.append(bookCardBody, bookLinkEl, saveBtn);
             bookDiv.append(bookCard);
             $("#search-results").append(bookDiv);
         }
@@ -57,10 +57,10 @@ $(document).ready(function () {
 
     $(document).on("click", "#save-btn", function (event) {
         event.preventDefault();
-        
-        var bookTitle = $(this).siblings(".card-title").text();
-        var bookAuthor = $(this).siblings(".card-text").text();
-        var bookImage = $(this).siblings(".card-img-top").attr("src");
+    
+        var bookTitle = $(this).siblings(".card-body").find(".card-title").text();
+        var bookAuthor = $(this).siblings(".card-body").find(".card-text").text();
+        var bookImage = $(this).siblings(".card-body").find(".card-img-top").attr("src");
         var bookLink = $(this).siblings(".btn-primary").attr("href");
 
         var book = {

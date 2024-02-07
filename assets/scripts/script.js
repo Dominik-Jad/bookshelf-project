@@ -40,14 +40,12 @@ $(document).ready(function () {
             var bookImage = book.volumeInfo.imageLinks.thumbnail;
             var bookLink = book.volumeInfo.previewLink;
 
-            var bookDiv = $("<div>").addClass("col-md-4");
+            var bookDiv = $("<div>").addClass("col-md-6 col-lg-4 text-center");
             var bookCard = $("<div>").addClass("card");
             var bookCardBody = $("<div>").addClass("card-body");
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
-            bookImageEl.height(200);
-            bookImageEl.width(200);
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
 
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl, saveBtn);
@@ -125,18 +123,17 @@ $(document).ready(function () {
             var bookImage = book.cover;
             var bookLink = book.url;
 
-            var bookDiv = $("<div>").addClass("col-md-4");
+            var bookDiv = $("<div>").addClass("col-md-6 col-lg-4 text-center");
             var bookCard = $("<div>").addClass("card");
             var bookCardBody = $("<div>").addClass("card-body");
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
-            bookImageEl.height(200);
-            bookImageEl.width(200);
+    
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl, saveBtn);
-            bookCard.append(bookCardBody);
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
+            bookCard.append(bookCardBody, saveBtn, bookLinkEl);
             bookDiv.append(bookCard);
             $("#search-results").append(bookDiv);
         }
@@ -195,12 +192,11 @@ $(document).ready(function () {
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/book%20placeholder.png").attr("id", "isbn-" + isbn);
-            bookImageEl.height(200);
-            bookImageEl.width(200);
+        
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book").attr("id", "btn-isbn-" + isbn);
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl);
-            bookCard.append(bookCardBody);
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
+            bookCard.append(bookCardBody,bookLinkEl);
             bookDiv.append(bookCard);
             $("#best-sellers").append(bookDiv);
 

@@ -81,10 +81,10 @@ $(document).ready(function () {
             // for each book add a new row to the book container and display the book title 
             // review and a button to add a review
             var book = savedBooks[i];
-            var bookDiv = $("<div>").addClass("row text-center").attr("id", [i]);
-            var bookTitleDiv = $("<div>").addClass("col-md-3").text(book.title);
-            var bookReviewDiv = $("<div>").addClass("col-md-6").text(book.review);
-            var buttondDiv = $("<div>").addClass("col-md-3");
+            var bookDiv = $("<div>").addClass("row text-center underline").attr("id", [i]);
+            var bookTitleDiv = $("<div>").addClass("col-3").text(book.title);
+            var bookReviewDiv = $("<div>").addClass("col-6").text(book.review);
+            var buttondDiv = $("<div>").addClass("col-3");
             var reviewBtn = $("<button>").addClass("btn btn-primary btn-success").text("Add Review").attr("id", "add-review-btn");
             var appendBtn = $("<button>").addClass("btn btn-primary btn-warning").text("Append").attr("id", "append-btn");
             var deleteBtn = $("<button>").addClass("btn btn-primary btn-danger").text("Delete").attr("id", "delete-btn");

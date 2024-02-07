@@ -12,41 +12,47 @@ $(document).ready(function () {
 
 
     function displayRecommendation(books) {
-        // display search results
-        //clear 
+        // Clear previous recommendations
         $("#recommended-books").empty();
-
-        console.log(books);
-
-        //display 9 random books from the list of books
-        for (let i = 0; i < 9; i++) {
-            var saveBtn = $("<button>").addClass("btn btn-primary").text("Save Book").attr("id", "save-btn");
-
-            var randomIndex = Math.floor(Math.random() * books.length);
-            var book = books[randomIndex];
-
+    
+        // Copy the array of books to avoid modifying the original array
+        let remainingBooks = books.slice();
+    
+        // Display 9 unique random books from the list of books
+        for (let i = 0; i < 9 && remainingBooks.length > 0; i++) {
+            // Select a random index from the remaining books
+            var randomIndex = Math.floor(Math.random() * remainingBooks.length);
+            
+            // Get the book at the random index
+            var book = remainingBooks[randomIndex];
+    
+            // Remove the selected book from the remaining books array
+            remainingBooks.splice(randomIndex, 1);
+    
+            // Extract book details
             var bookTitle = book.volumeInfo.title;
             var bookAuthor = book.volumeInfo.authors;
             var bookImage = book.volumeInfo.imageLinks.thumbnail;
             var bookLink = book.volumeInfo.previewLink;
-
-            var bookDiv = $("<div>").addClass("col-md-4");
+    
+            // Create elements for the book card
+            var bookDiv = $("<div>").addClass("col-lg-4 col-md-6 col-sm-12 text-center");
             var bookCard = $("<div>").addClass("card");
             var bookCardBody = $("<div>").addClass("card-body");
             var bookTitleEl = $("<h5>").addClass("card-title title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text author").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
-            bookImageEl.height(200);
-            bookImageEl.width(200);
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
+            var saveBtn = $("<button>").addClass("btn btn-primary").text("Save Book").attr("id", "save-btn");
 
-            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl, bookLinkEl, saveBtn);
-            bookCard.append(bookCardBody);
+            // Append elements to the card body
+            bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
+            bookCard.append(bookCardBody, bookLinkEl, saveBtn);
             bookDiv.append(bookCard);
+    
+            // Append the card to the recommended-books container
             $("#recommended-books").append(bookDiv);
         }
-
-
     }
 
     function getRecommendation(genre) {
@@ -70,9 +76,9 @@ $(document).ready(function () {
 
     $("#recommended-books").on("click", "#save-btn", function () {
         event.preventDefault();
-        var bookTitle = $(this).siblings(".card-title").text();
-        var bookAuthor = $(this).siblings(".card-text").text();
-        var bookImage = $(this).siblings(".card-img-top").attr("src");
+        var bookTitle = $(this).siblings(".card-body").find(".title").text();
+        var bookAuthor = $(this).siblings(".card-body").find(".author").text();
+        var bookImage = $(this).siblings(".card-body").find(".card-img-top").attr("src");
         var bookLink = $(this).siblings(".btn-primary").attr("href");
 
         var book = {
@@ -82,7 +88,8 @@ $(document).ready(function () {
             link: bookLink,
             fave : false,
         }
-
+        
+        console.log(book);
         // Check if book is already saved
         var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
         for (var i = 0; i < savedBooks.length; i++) {

@@ -119,6 +119,10 @@ margin-top: 20px;
   color: #007bff;
 }
 
+.bold-hr {
+  border-top: 3px solid rgb(89, 56, 29); /* Adjust thickness as needed */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
 #search-input {

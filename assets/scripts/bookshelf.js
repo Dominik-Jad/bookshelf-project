@@ -8,18 +8,16 @@ function displayBooks() {
             continue;
         }
         var book = savedBooks[i];
-        var container = $("<div>").addClass("col-md-6");
+        var container = $("<div>").addClass("col-lg-6 col-md-12 col-sm-12");
         var bookCard = $("<div>").addClass("card");
         var bookBody = $("<div>").addClass("card-body");
         var bookTitle = $("<h5>").addClass("card-title").text(book.title);
         var bookAuthor = $("<p>").addClass("card-text").text(book.author);
         var bookImage = $("<img>").addClass("card-img-top").attr("src", book.image);
-        bookImage.height(100);
-        bookImage.width(100);
-        var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View Book");
+        var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View");
         var readBtn = $("<button>").addClass("btn btn-danger read-it-btn").text("Read it!").attr("data-id", i);
-        bookBody.append(bookTitle, bookAuthor, bookImage, bookLink, readBtn);
-        bookCard.append(bookBody);
+        bookBody.append(bookTitle, bookAuthor, bookImage);
+        bookCard.append(bookBody,bookLink, readBtn);
         container.append(bookCard);
        $("#to-read").append(container);
     }
@@ -31,17 +29,15 @@ function displayFaveBooks() {
     for (var i = 0; i < savedBooks.length; i++) {
         var book = savedBooks[i];
         if (book.fave) {
-            var container = $("<div>").addClass("col-md-6");
+            var container = $("<div>").addClass("col-lg-6 col-md-12 col-sm-12");
             var bookCard = $("<div>").addClass("card");
             var bookBody = $("<div>").addClass("card-body");
             var bookTitle = $("<h5>").addClass("card-title").text(book.title);
             var bookAuthor = $("<p>").addClass("card-text").text(book.author);
             var bookImage = $("<img>").addClass("card-img-top").attr("src", book.image);
-            bookImage.height(100);
-            bookImage.width(100);
-            var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View Book");
-            bookBody.append(bookTitle, bookAuthor, bookImage, bookLink );
-            bookCard.append(bookBody);
+            var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View");
+            bookBody.append(bookTitle, bookAuthor, bookImage );
+            bookCard.append(bookBody, bookLink);
             container.append(bookCard);
             $("#favourites").append(container);
         }
@@ -56,18 +52,16 @@ function displayReadBooks() {
             continue;
         }
         if (book.read) {
-            var container = $("<div>").addClass("col-md-6");
+            var container = $("<div>").addClass("col-lg-6 col-md-12 col-sm-12");
             var bookCard = $("<div>").addClass("card");
             var bookBody = $("<div>").addClass("card-body");
             var bookTitle = $("<h5>").addClass("card-title").text(book.title);
             var bookAuthor = $("<p>").addClass("card-text").text(book.author);
             var bookImage = $("<img>").addClass("card-img-top").attr("src", book.image);
-            bookImage.height(100);
-            bookImage.width(100);
-            var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View Book");
+            var bookLink = $("<a>").addClass("btn btn-primary").attr("href", book.link).text("View");
             var faveBtn = $("<button>").addClass("btn btn-warning fave-btn").text("Favorite").attr("data-id", i);
-            bookBody.append(bookTitle, bookAuthor, bookImage, bookLink, faveBtn);
-            bookCard.append(bookBody);
+            bookBody.append(bookTitle, bookAuthor, bookImage);
+            bookCard.append(bookBody, bookLink, faveBtn);
             container.append(bookCard);
             $("#have-read").append(container);
         }

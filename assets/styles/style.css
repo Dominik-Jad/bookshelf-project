@@ -22,6 +22,20 @@ h2, h3 {
   
 }
 
+.card {
+  height: 100%;
+}
+
+.col-12 {
+  margin-bottom: 20px;
+}
+
+.col-md-12 {
+  margin-bottom: 20px;
+}
+.col-md-6 {
+  margin-bottom: 20px;
+}
 .btn {
    margin: 10px;
 }

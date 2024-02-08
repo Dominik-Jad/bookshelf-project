@@ -105,5 +105,16 @@ $(document).ready(function () {
         localStorage.setItem("myBooks", JSON.stringify(savedBooks));
         $("#book-added-modal").modal("show");
     });
+
+    $(document).ready(function() {
+        // Add click event listener to menu items
+        $("#sidebar ul li a").on("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            $(this).addClass("active").parent().siblings().find("a").removeClass("active");
+            var genre = $(this).text();
+            getRecommendation(genre); // Call the function to fetch and display recommendations
+        });
+    });
+    
 });
 

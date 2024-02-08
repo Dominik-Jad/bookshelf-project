@@ -128,12 +128,17 @@ margin-top: 20px;
 }
 
 #sidebar ul li a:hover {
-  color: #007bff;
+  color: #975b3e;
 }
 
 .bold-hr {
   border-top: 3px solid rgb(89, 56, 29); /* Adjust thickness as needed */
 }
+#sidebar ul li a.active {
+  background-color: #975b3e; /* Set background color for active menu item */
+  color: #fff; /* Set text color for active menu item */
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {

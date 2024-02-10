@@ -3,27 +3,27 @@ $(document).ready(function () {
     function displayRecommendation(books) {
         // Clear previous recommendations
         $("#recommended-books").empty();
-    
+
         // Copy the array of books to avoid modifying the original array
         let remainingBooks = books.slice();
-    
+
         // Display 9 unique random books from the list of books
         for (let i = 0; i < 9 && remainingBooks.length > 0; i++) {
             // Select a random index from the remaining books
             var randomIndex = Math.floor(Math.random() * remainingBooks.length);
-            
+
             // Get the book at the random index
             var book = remainingBooks[randomIndex];
-    
+
             // Remove the selected book from the remaining books array
             remainingBooks.splice(randomIndex, 1);
-    
+
             // Extract book details
             var bookTitle = book.volumeInfo.title;
             var bookAuthor = book.volumeInfo.authors;
             var bookImage = book.volumeInfo.imageLinks.thumbnail;
             var bookLink = book.volumeInfo.previewLink;
-    
+
             // Create elements for the book card
             var bookDiv = $("<div>").addClass("col-lg-4 col-md-6 col-sm-12 text-center");
             var bookCard = $("<div>").addClass("card");
@@ -38,7 +38,7 @@ $(document).ready(function () {
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
             bookCard.append(bookCardBody, bookLinkEl, saveBtn);
             bookDiv.append(bookCard);
-    
+
             // Append the card to the recommended-books container
             $("#recommended-books").append(bookDiv);
         }
@@ -75,9 +75,9 @@ $(document).ready(function () {
             author: bookAuthor,
             image: bookImage,
             link: bookLink,
-            fave : false,
+            fave: false,
         }
-        
+
         console.log(book);
         // Check if book is already saved
         var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
@@ -94,15 +94,15 @@ $(document).ready(function () {
         $("#book-added-modal").modal("show");
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Add click event listener to menu items
-        $("#sidebar ul li a").on("click", function(event) {
+        $("#sidebar ul li a").on("click", function (event) {
             event.preventDefault(); // Prevent default link behavior
             $(this).addClass("active").parent().siblings().find("a").removeClass("active");
             var genre = $(this).text();
             getRecommendation(genre); // Call the function to fetch and display recommendations
         });
     });
-    
+
 });
 

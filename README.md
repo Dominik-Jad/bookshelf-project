@@ -33,5 +33,8 @@ To run the Bookshelf web application locally:
 ## Contributing
 Contributions to the Bookshelf project are welcome! If you have ideas for improvements, new features, or bug fixes, please submit a pull request or open an issue on GitHub.
 
+## Live GitHub Pages
+https://dominik-jad.github.io/bookshelf-project/
+
 ## License
 The Bookshelf web application is licensed under the MIT License.

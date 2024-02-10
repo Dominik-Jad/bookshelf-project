@@ -130,7 +130,7 @@ $(document).ready(function () {
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
     
-            var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book");
+            var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("Buy Book");
 
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
             bookCard.append(bookCardBody, saveBtn, bookLinkEl);
@@ -152,7 +152,7 @@ $(document).ready(function () {
         // get 6 random books
         var randomBooks = [];
         try {
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 12; i++) {
                 const response = await fetch(url, options);
                 const result = await response.json();
                 randomBooks.push(result);
@@ -171,7 +171,7 @@ $(document).ready(function () {
         $("#best-sellers").empty();
         // display random 5 from best sellers list
         for (var i = 0; i < 5; i++) {
-
+            var saveBtn = $("<button>").addClass("btn btn-primary").text("Save Book").attr("id", "save-btn");
             var randomIndex = Math.floor(Math.random() * bestSellers.length);
 
             var bestSeller = bestSellers[randomIndex];
@@ -196,7 +196,7 @@ $(document).ready(function () {
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book").attr("id", "btn-isbn-" + isbn);
 
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
-            bookCard.append(bookCardBody,bookLinkEl);
+            bookCard.append(bookCardBody,bookLinkEl, saveBtn);
             bookDiv.append(bookCard);
             $("#best-sellers").append(bookDiv);
 

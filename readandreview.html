@@ -14,7 +14,7 @@
 
 <body>
     <!-- Navigation -->
-    <ul class="nav nav-pills nav-fill">
+    <ul class="nav nav-pills nav-fill fixed-top">
         <li class="nav-item">
             <a class="nav-link" href="index.html">Browse Bookshelf</a>
             </a>
@@ -31,11 +31,12 @@
     </ul>
 
     <!-- Hero Section -->
-    <div class="hero-section"
-        style="position: relative; background-image: url('assets/images/read&review.jpg'); margin: 0; padding: 30px 0; background-position: center; background-repeat: no-repeat; background-size: cover; height: 300px; overflow: hidden;">
-        <div class="container">
+    <div class="hero-reviews">
+        <div class="hero-content">
+            <h1 class="hero-title">Read & Review </h1>
         </div>
     </div>
+    
     <!-- Books, Text area to display revie and button to add review in modal -->
     <div class="container col-lg-10 col-md-12 col-sm-12">
     <div class="row text-center">
@@ -116,7 +117,25 @@
             </div>
         </div>
     </div>
-    
+
+    <div id="review-deleted-modal" class="modal fade" tabindex="-1">
+        <div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Review Deleted</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your review has been deleted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
     <!-- Scripts -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

@@ -26,6 +26,10 @@ $(document).ready(function () {
 
         // clear the book container
         $("#book-container").empty();
+
+        // show modal 
+        $("#review-deleted-modal").modal("show");
+        
         displayBooks();
 
     });
@@ -74,43 +78,15 @@ $(document).ready(function () {
         // display the books
         displayBooks();
     });
-    // display books title from local storage into the  books section
-    function displayBooks() {
-        var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
-        for (var i = 0; i < savedBooks.length; i++) {
-            // for each book add a new row to the book container and display the book title 
-            // review and a button to add a review
-            var book = savedBooks[i];
-            var bookDiv = $("<div>").addClass("row text-center underline").attr("id", [i]);
-            var bookTitleDiv = $("<div>").addClass("col-3").text(book.title);
-            var bookReviewDiv = $("<div>").addClass("col-6").text(book.review);
-            var buttondDiv = $("<div>").addClass("col-3");
-            var reviewBtn = $("<button>").addClass("btn btn-primary btn-success").text("Add Review").attr("id", "add-review-btn");
-            var appendBtn = $("<button>").addClass("btn btn-primary btn-warning").text("Append").attr("id", "append-btn");
-            var deleteBtn = $("<button>").addClass("btn btn-primary btn-danger").text("Delete").attr("id", "delete-btn");
-
-            if (book.review) {
-                buttondDiv.append(deleteBtn);
-                buttondDiv.append(appendBtn);
-            } else {
-                buttondDiv.append(reviewBtn);
-            }
-            bookDiv.append(bookTitleDiv, bookReviewDiv, buttondDiv);
-            $("#book-container").append(bookDiv);
-
-            console.log(book);
-        }
-    }
-    displayBooks();
 // Display books title from local storage into the books section
 function displayBooks() {
     var savedBooks = JSON.parse(localStorage.getItem("myBooks")) || [];
     for (var i = 0; i < savedBooks.length; i++) {
         // For each book, add a new row to the book container and display the book title, review, and a button to add a review
         var book = savedBooks[i];
-        var bookDiv = $("<div>").addClass("row text-center book-entry").attr("id", [i]);
-        var bookTitleDiv = $("<div>").addClass("col-md-3").text(book.title);
-        var bookReviewDiv = $("<div>").addClass("col-md-6").text(book.review);
+        var bookDiv = $("<div>").addClass("row row-review text-center book-entry").attr("id", [i]);
+        var bookTitleDiv = $("<div>").addClass("col-md-3 border-right").text(book.title);
+        var bookReviewDiv = $("<div>").addClass("col-md-6 border-right").text(book.review);
         var buttonDiv = $("<div>").addClass("col-md-3");
         var reviewBtn = $("<button>").addClass("btn btn-primary btn-success").text("Add Review").attr("id", "add-review-btn");
         var appendBtn = $("<button>").addClass("btn btn-primary btn-warning").text("Append").attr("id", "append-btn");
@@ -135,5 +111,6 @@ function displayBooks() {
     }
 }
 
+displayBooks();
     
 });

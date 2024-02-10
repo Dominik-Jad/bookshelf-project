@@ -3,6 +3,7 @@ body,
 h1,
 h2,
 p {
+text-align: center;
 margin: 0;
 padding: 0;
 }
@@ -10,9 +11,9 @@ h1 {
     color: #493024;
 }
 h2, h3 {
+    font-weight: bolder;
     color: #684433;
 }
-
 
 .card-body {
     background-color: rgb(252, 242, 237) ;
@@ -26,6 +27,11 @@ h2, h3 {
   height: 100%;
 }
 
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
 .col-12 {
   margin-bottom: 20px;
 }
@@ -35,9 +41,7 @@ h2, h3 {
 }
 .col-md-6 {
   margin-bottom: 20px;
-}
-.btn {
-   margin: 10px;
+  word-wrap: break-word;
 }
 
 body {
@@ -45,9 +49,14 @@ font-family: "Arial", sans-serif;
 background-color: rgb(196, 178, 155);
 }
 
+.row{
+  padding-top: 20px;
+}
+
 /* Navigation styles */
 .nav {
   background-color:rgb(111, 69, 47); /* Bootstrap's primary color */
+  padding: 10px;
 }
 
 .nav-link {
@@ -64,24 +73,109 @@ background-color: rgb(196, 178, 155);
 
 /* Hero Section styles */
 .hero-section {
-position: relative;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 300px;
-overflow: hidden;
-  color: #fff; /* Text color for hero section */
+  background-image: url("../images/BookShelf.png");
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  overflow: hidden;
+  color: #fff;
 }
+
+.hero-reviews{
+  position: relative; /* Positioning context for absolutely positioned content */
+  height: 400px; /* Set the height of the hero div */
+  background-image: url('../images/read&review.png'); /* Set the background image */
+  background-size: cover; /* Cover the entire area of the div with the background image */
+  background-position: center; /* Center the background image */
+  color: white; /* Text color */
+  text-align: center; /* Center-align text */
+}
+
+.hero-my-bookshelf{
+  position: relative; /* Positioning context for absolutely positioned content */
+  height: 400px; /* Set the height of the hero div */
+  background-image: url('../images/mybookshelf.jpg'); /* Set the background image */
+  background-size: cover; /* Cover the entire area of the div with the background image */
+  background-position: center; /* Center the background image */
+  color: white; /* Text color */
+  text-align: center; /* Center-align text */
+}
+
+.hero-recommendations{
+  position: relative; /* Positioning context for absolutely positioned content */
+  height: 400px; /* Set the height of the hero div */
+  background-image: url('../images/recommendations.png'); /* Set the background image */
+  background-size: cover; /* Cover the entire area of the div with the background image */
+  background-position: center; /* Center the background image */
+  color: white; /* Text color */
+  text-align: center; /* Center-align text */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-title {
+  margin-bottom: 20px; /* Add some space between the title and the subtitle */
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color:#684433;
+  padding: 20px;
+}
+
 .btn-primary {
     background-color: rgb(149, 112, 87); /* Set background color */
     border-color: rgb(149, 112, 87); /* Set border color */
+    margin:10px;
 }
 
+.btn-primary:disabled {
+    background-color: #975b3e; /* Darker shade for disabled button */
+    border-color: #975b3e; /* Darker shade for disabled button */
+}
 .btn-primary:hover {
     background-color: #975b3e; /* Darker shade for hover effect */
     border-color: #975b3e; /* Darker shade for hover effect */
 }
 
+.row-review{
+  background-color: rgb(252, 242, 237) ;
+  border: 1px solid #dee2e6;
+  margin: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.row-review:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.border-right {
+  border-right: 1px solid #000000 !important;
+  margin-bottom: 0px !important;
+}
+
+.btn-warning {
+  background-color: rgb(149, 112, 87); /* Set background color */
+  border-color: rgb(149, 112, 87); /* Set border color */
+  color: white;
+  margin:10px;
+}
+
+.btn-warning:hover{
+  background-color: #975b3e; /* Darker shade for hover effect */
+  border-color: #975b3e;
+  color: white;
+  margin:10px;
+}
 /* Book Search and Display styles */
 #book-search-container {
 margin-top: 20px;
@@ -92,34 +186,34 @@ color: rgb(111, 69, 47);
 margin-bottom: 20px;
 }
 
-#search-input {
-width: 80%;
-}
-
-#search-btn {
-margin-top: 10px;
+#search-btn{
+    margin: 0 !important;
 }
 
 #search-results {
 margin-top: 20px;
+text-align: center;
+justify-content: center;
 }
 
-#sidebar {
-  top: 0;
-  left: 0;
-  right: 200px;
-  height: 100%;
-  background-color: #f8f9fa;
-  padding: 20px;
+/* sticky sidebar within the row div*/
+#sidebar ul{
+  position: -webkit-sticky; /* for browser compatibility */
+  position: sticky;
+  top: 100px;
+  background-color: #00ff00;
+  padding: 3px;
 }
 
 #sidebar ul {
-  padding: 0;
+  background-color: #f8f9fa;
+  padding: 10px 10px;
 }
 
 #sidebar ul li {
   list-style: none;
   margin-bottom: 10px;
+ 
 }
 
 #sidebar ul li a {
@@ -127,16 +221,26 @@ margin-top: 20px;
   color: #343a40;
 }
 
-#sidebar ul li a:hover {
-  color: #975b3e;
+#sidebar ul li a.active {
+  color: #fff; /* Set text color for active menu item */
+}
+
+#sidebar ul li:has(> a.active) { 
+  background-color: #975b3e; /* Set background color for active menu item */
+  font-size: larger;
+  padding: 10px;
+  width: 100%;
+}
+
+#sidebar ul li:hover > a, #sidebar ul li:hover {
+  background-color: #975b3e; /* Set background color for active menu item */
+  color: #fff; /* Set text color for active menu item */
+  padding: 10px;
+  width: 100%;
 }
 
 .bold-hr {
   border-top: 3px solid rgb(89, 56, 29); /* Adjust thickness as needed */
-}
-#sidebar ul li a.active {
-  background-color: #975b3e; /* Set background color for active menu item */
-  color: #fff; /* Set text color for active menu item */
 }
 
 
@@ -145,6 +249,11 @@ margin-top: 20px;
 #search-input {
 width: 100%;
 }
+
+.hero {
+  height: 300px; /* Adjust height for smaller screens */
+}
+
 }
 
 /* Define media query for screens smaller than 768px */
@@ -154,4 +263,16 @@ width: 100%;
       height: 300px;
       width: 200px;
   }
+
+  .border-right{
+    border-right: none !important;
+    border-bottom: 1px solid #000000 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust properties for screens smaller than 576px */
+  .hero {
+    height: 200px; /* Further adjust height for even smaller screens */
+}
 }

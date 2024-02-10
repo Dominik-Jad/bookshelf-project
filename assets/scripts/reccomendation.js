@@ -1,17 +1,5 @@
 $(document).ready(function () {
 
-    console.log("reccomendation.js is connected");
-
-
-    // add event listener to the list of genres
-    $(".genres").on("click", 'a', function (event) {
-        event.preventDefault();
-        var genre = $(this).text();
-        $(this).addClass("active").siblings().removeClass("active");
-        getRecommendation(genre);
-    });
-
-
     function displayRecommendation(books) {
         // Clear previous recommendations
         $("#recommended-books").empty();

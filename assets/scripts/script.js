@@ -57,7 +57,7 @@ $(document).ready(function () {
 
     $(document).on("click", "#save-btn", function (event) {
         event.preventDefault();
-    
+
         var bookTitle = $(this).siblings(".card-body").find(".card-title").text();
         var bookAuthor = $(this).siblings(".card-body").find(".card-text").text();
         var bookImage = $(this).siblings(".card-body").find(".card-img-top").attr("src");
@@ -68,7 +68,7 @@ $(document).ready(function () {
             author: bookAuthor,
             image: bookImage,
             link: bookLink,
-            fave : false,
+            fave: false,
         }
 
         // Check if book is already saved
@@ -129,7 +129,7 @@ $(document).ready(function () {
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", bookImage);
-    
+
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("Buy Book");
 
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
@@ -178,10 +178,10 @@ $(document).ready(function () {
 
             if (bestSeller.isbns[0] === undefined) {
                 var isbn = 0;
-            }else {
+            } else {
                 var isbn = bestSeller.isbns[0].isbn10;
             }
-           
+
             var bookTitle = bestSeller.title;
             var bookAuthor = bestSeller.author;
             var bookLink = bestSeller.amazon_product_url;
@@ -192,18 +192,18 @@ $(document).ready(function () {
             var bookTitleEl = $("<h5>").addClass("card-title").text(bookTitle);
             var bookAuthorEl = $("<p>").addClass("card-text").text(bookAuthor);
             var bookImageEl = $("<img>").addClass("card-img-top").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/book%20placeholder.png").attr("id", "isbn-" + isbn);
-        
+
             var bookLinkEl = $("<a>").addClass("btn btn-primary").attr("href", bookLink).text("View Book").attr("id", "btn-isbn-" + isbn);
 
             bookCardBody.append(bookTitleEl, bookAuthorEl, bookImageEl);
-            bookCard.append(bookCardBody,bookLinkEl, saveBtn);
+            bookCard.append(bookCardBody, bookLinkEl, saveBtn);
             bookDiv.append(bookCard);
             $("#best-sellers").append(bookDiv);
 
-            if (isbn){
-              updateCover(isbn);
+            if (isbn) {
+                updateCover(isbn);
             }
-           
+
         }
     }
     function updateCover(isbn) {
